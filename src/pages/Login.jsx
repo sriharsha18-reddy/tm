@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'; // Use for navigation
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const history = useHistory();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('User logged in:', { email, password });
-    // Redirect to the main app page after login
-    history.push('/dashboard'); // Example route to the dashboard after login
+    // Handle login logic (e.g., authenticate user)
+    console.log('Email:', email);
+    console.log('Password:', password);
   };
 
   return (
@@ -36,9 +33,7 @@ const Login = () => {
             required
           />
         </div>
-        <button type="submit" style={styles.submitBtn}>
-          Login
-        </button>
+        <button type="submit" style={styles.submitBtn}>Login</button>
       </form>
     </div>
   );
